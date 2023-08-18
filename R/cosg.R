@@ -50,7 +50,7 @@ cosg<-function(
 ){
    
     ### Obtain the cellxgene data
-    genexcell<-Seurat::GetAssayData(object = object[[assay]], layer = layer)
+    genexcell<-as(Seurat::GetAssayData(object = object[[assay]], layer = layer), Class='dgCMatrix')
 
     if (length(groups)>1){
         object <- subset(x = object, idents = groups)
