@@ -42,7 +42,7 @@ cosg<-function(
     object,
     groups='all',
     assay='RNA',
-    slot='data',
+    layer='data',
     mu=1,
     remove_lowly_expressed=TRUE,
     expressed_pct=0.1,
@@ -50,7 +50,7 @@ cosg<-function(
 ){
    
     ### Obtain the cellxgene data
-    genexcell<-Seurat::GetAssayData(object = object[[assay]], slot = slot)
+    genexcell<-Seurat::GetAssayData(object = object[[assay]], layer = layer)
 
     if (length(groups)>1){
         object <- subset(x = object, idents = groups)
