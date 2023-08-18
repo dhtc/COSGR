@@ -14,10 +14,10 @@ select_top_n<-function(scores,n_top){
 #' Marker gene identification for cell groups in a given dataset.
 #'
 #' @param assay Assay to use in marker gene identification
-#' @param slot Slot to pull data from
+#' @param layer layer to pull data from
 #' @param mu The penalty factor to penalize gene expression in cells not belonging to the cluster of interest
 #' @param n_genes_user Number of top ranked genes returned in the result
-#' @return A list containing two dataframes for ranked marker genes' names and scores, respectively
+#' @return A list containing three dataframes for ranked marker genes' names, scores, and degs table respectively
 #' @export
 #' @examples
 #' suppressMessages(library(Seurat))
