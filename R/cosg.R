@@ -147,11 +147,13 @@ cosg<-function(
     
     colnames(rank_stats_names) <- groups_order
     colnames(rank_stats_scores) <- groups_order
-    
+    table.df = dplyr::bind_cols(rank_stats_names %>% setNames(paste0(colnames(rank_stats_names), '_n')), rank_stats_scores %>% setNames(paste0(colnames(rank_stats_scores), '_s')))
+    table.df = table.df[, stringr::str_sort(colnames(table.df), numeric = T)]
     ###
     ranks_stats=list(
         names=rank_stats_names,
-        scores=rank_stats_scores
+        scores=rank_stats_scores,
+        table = table.df
 
     )
     ### return
